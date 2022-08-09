@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Selling Price Prediction</title>
+    <style>
+        body{
+            background: #000000;
+        }
+        center{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            margin-bottom: 20px;
+        }
+        .title span{
+            font-size: 50px;
+            font-family: cursive;
+            text-shadow: 0px 0px 5px #DCDCDC;
+        }
+        .form-layout{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin-top: 20px;
+            border: 2px solid grey;
+            width: 40%;
+            min-width: 400px;
+            margin: auto;
+            padding-bottom: 20px;
+            background: linear-gradient(89deg, #7FFF00, #ebf5e1)
+        }
+        .form-single-item{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 20px;
+            font-size: 1.2em;
+            width: 95%;
+        }
+        .form-single-item input,label,select {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            outline: none;
+        }
+
+        .form-single-item input,select {
+            font-size: .75em;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 4px;
+            background: #cce9ed;
+            transition: .5s all ease-in-out;
+        }
+
+        .form-single-item input:focus {
+            background: #80c3ce;
+            border: 2px solid darkblue;
+        }
+        select:focus{
+            background: #00FFFF;
+            border: 2px solid darkblue;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+            font-family: -webkit-pictograph;
+            font-weight: 600;
+            color: #d02545;
+        }
+
+        .form-button-item{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .form-button-item input {
+            border: 2px solid #3a8f73;
+            border-radius: 10px;
+            background: #2cc470;
+            font-size: 1.1em;
+            font-family: sans-serif;
+            font-family: cursive;
+            color: white;
+            transition: .6s all ease-in-out;
+        }
+        .form-button-item input:nth-child(2) {
+            background: #e75360;
+            /color: black;/
+            border: 2px solid #d02940;
+        }
+        .form-button-item input:hover{
+            border: 5px solid black;
+            box-shadow: 0 0 10px green;
+        }
+        .form-button-item input:nth-child(2):hover{
+            border: 2px solid red;
+            box-shadow: 0 0 10px red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div align="center" class='title' style="color: white">
+             <span><u>Enter the Details of the Car to be sold : </u></span>
+    </div>
+
+    <div class = 'form-layout'>
+        <form  method="post" action="{{url_for('predict')}}">
+
+            <div align="center" class = 'form-single-item'>
+                <label for="present_price">present price of same new car in lakhs</label>
+                <div>
+                    <input type="number" step="any" value="" name="present_price" placeholder="Enter the present price of the car in lakhs" id="present_price">
+                </div>
+            </div>
+
+            <div align="center" class = 'form-single-item'>
+                <label for="kms_driven">kms_driven</label>
+                <div>
+                    <input type="number" step="any" value="" name="kms_driven" placeholder="Enter the kms driven" id="kms_driven">
+                </div>
+            </div>
+
+
+            <div align="center" class = 'form-single-item'>
+                <label for="owner">owner</label>
+                <div>
+                    <select name="owner" id="owner">
+                        <option value=0>new</option>
+                        <option value=1>1st hand</option>
+                        <option value=2>2nd hand</option>
+                        <option value=3>3rd hand</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div align="center" class = 'form-single-item'>
+                <label for="no_of_years">no_of_years</label>
+                <div>
+                    <input type="number" step="any" value="" name="no_of_years" placeholder="How old the car is = " id="no_of_years">
+                </div>
+            </div>
+
+            <div align="center" class = 'form-single-item'>
+                <label for="fuel_type">fuel_type</label>
+                <div>
+                    <select name="fuel_type" id="fuel_type">
+                        <option value=0>cng</option>
+                        <option value=1>petrol</option>
+                        <option value=2>diesel</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div align="center" class = 'form-single-item'>
+            <label for="seller_type_individual">seller_type_individual</label>
+                <div>
+                    <select name="seller_type_individual" id="seller_type_individual">
+                        <option value=1>dealer</option>
+                        <option value=2>individual</option>
+                    </select>
+                </div>
+            </div>
+
+             <div align="center" class = 'form-single-item'>
+            <label for="transmission">transmission</label>
+                <div>
+                    <select name="transmission" id="transmission">
+                        <option value=1>manual</option>
+                        <option value=2>automatic</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class = 'form-button-item'>
+                <input type="submit" value="Submit Now">
+                <input type="reset" value="Reset Now">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <style>
+        body{
+            background: #000000;
+        }
+        center{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            margin-bottom: 20px;
+        }
+        .title span{
+            font-size: 15px;
+            font-family: cursive;
+            text-shadow: 0px 0px 7px #DCDCDC;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+        .heading span{
+            font-size: 20px;
+            font-family: cursive;
+            text-shadow: 0px 0px 5px #DCDCDC;
+        }
+        .textb{
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+
+
+</head>
+<body bgcolor=#a3cfb4>
+   <center>
+
+       <div class="heading" style="color: white">
+           <span>  <h1> <u>Selling Price : </u></h1>  </span>
+       </div>
+
+       {%if data < 0%}
+       <div class="title">
+           <span><h1></h1> </span>
+       </div>
+
+       <div class="textb">
+           <h3>Please enter details correctly ! </h3>
+       </div>
+       <img src= "https://img.freepik.com/free-vector/400-error-bad-request-concept-illustration_114360-1933.jpg?w=740&t=st=1660068226~exp=1660068826~hmac=9d75893a236986ca70dee42c20ec73ed791a568893eab241b38978656403657d" alt="nondefault" class="center">
+
+       {%else%}
+       <div class="title" style="color: white">
+           <span> <h1>Your cars's selling price is = {%print(data)%} lakhs </h1></span>
+           <span> <h1>  </h1></span>
+       </div>
+
+       <div class="textb">
+           <h3></h3>
+       </div>
+       <img src= "https://st2.depositphotos.com/4009139/6014/i/950/depositphotos_60143131-stock-photo-pretty-woman-showing-ok-sign.jpg" alt="nondefault" class="center">
+
+       {%endif%}
+
+       <br><br>
+       <a href='/'>go back to home page</a>
+   </center>
+
+</body>
+</html>
