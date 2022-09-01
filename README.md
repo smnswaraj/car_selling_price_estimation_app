@@ -1,2 +1,2 @@
 # car_selling_price_prediction_app
-Car Selling price prediction we app project.
+In this Repository, I have saved the files which are to be used to build an web app in local system.
